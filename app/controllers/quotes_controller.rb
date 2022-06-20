@@ -29,7 +29,7 @@ class QuotesController < ApplicationController
     if @quote.update(quote_params)
       redirect_to quotes_path, notice: 'Quote was succesfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
